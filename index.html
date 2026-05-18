@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SafeWheel — Your Safe Ride Around Campus</title>
+  <meta name="description" content="SafeWheel is an on-campus e‑hailing platform for Malaysian IPTA communities. Safe, affordable, and reliable rides with verified drivers." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#FFC300;         /* SafeWheel gold */
+      --brand-d:#B38700;
+      --ink:#101214;
+      --muted:#5b6470;
+      --bg:#ffffff;
+      --bg-alt:#f6f7f9;
+      --card:#ffffff;
+      --success:#2e7d32;
+      --shadow:0 6px 24px rgba(16,18,20,.08);
+      --radius:14px;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--ink);text-decoration:none}
+    a.button{display:inline-flex;gap:.5rem;align-items:center;background:var(--ink);color:#fff;padding:.9rem 1.1rem;border-radius:10px;font-weight:600;box-shadow:var(--shadow)}
+    a.button.alt{background:var(--brand);color:#101214}
+    a.button.ghost{background:transparent;border:2px solid var(--ink);color:var(--ink)}
+    header.nav{
+      position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #eceff3
+    }
+    .nav-wrap{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.5rem 1rem;gap:1rem}
+    .brand{display:flex;align-items:center}
+    .brand img{height:55px;width:auto;object-fit:contain}
+    .nav-links{display:flex;gap:1rem;flex-wrap:wrap}
+    .nav-links a{padding:.5rem .6rem;border-radius:8px}
+    .nav-links a:hover{background:var(--bg-alt)}
+    .hero{
+      background:radial-gradient(1200px 400px at 70% -10%, rgba(255,195,0,.25), transparent), var(--bg);
+      border-bottom:1px solid #eceff3
+    }
+    .hero-wrap{max-width:var(--max);margin:0 auto;padding:3.2rem 1rem;display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+    .hero h1{font-size:clamp(1.9rem,3.2vw,3rem);line-height:1.2;margin:.25rem 0}
+    .hero p{color:var(--muted);font-size:1.05rem;margin:.5rem 0 1.25rem}
+    .pill{display:inline-flex;gap:.5rem;align-items:center;background:#fff;border:1px solid #eceff3;padding:.35rem .6rem;border-radius:999px;font-weight:600;color:#3a3f46}
+    .hero-card{background:#fff;border:1px solid #eceff3;border-radius:var(--radius);padding:1.5rem;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center}
+    .hero-logo{width:100%;max-width:280px;height:auto;margin-bottom:1rem;border-radius:8px}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;width:100%}
+    .kpi{background:var(--bg-alt);border-radius:12px;padding:.9rem;text-align:center}
+    .kpi b{font-size:1.25rem}
+    section{padding:2.8rem 1rem}
+    .wrap{max-width:var(--max);margin:0 auto}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+    .card{background:var(--card);border:1px solid #eceff3;border-radius:var(--radius);box-shadow:var(--shadow);padding:1.1rem}
+    h2{font-size:1.6rem;margin:0 0 .75rem}
+    h3{font-size:1.15rem;margin:1rem 0 .35rem}
+    ul{margin:.2rem 0 1rem 1.1rem}
+    .toc ol{margin:.4rem 0 0 1.1rem}
+    .feature-list{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}
+    .feature{background:var(--bg-alt);padding:.9rem;border-radius:12px;border:1px solid #eceff3}
+    .badge{display:inline-block;background:#fff;border:1px solid #eceff3;border-radius:999px;padding:.2rem .55rem;font-size:.85rem}
+    .table{width:100%;border-collapse:collapse;font-size:.95rem}
+    .table th,.table td{border:1px solid #e7ebf0;padding:.55rem .6rem;text-align:left}
+    .table th{background:#fafbfd}
+    .cta{background:linear-gradient(180deg,#fff, #f9fafb)}
+    .cta .box{max-width:var(--max);margin:0 auto;border:1px solid #eceff3;border-radius:var(--radius);padding:1.4rem;display:grid;grid-template-columns:1.2fr .8fr;gap:1rem;align-items:center;box-shadow:var(--shadow)}
+    footer{border-top:1px solid #eceff3;background:#fff}
+    .foot{max-width:var(--max);margin:0 auto;padding:1.2rem 1rem;color:#6a717a;font-size:.95rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between}
+    /* responsive */
+    @media (max-width:900px){
+      .hero-wrap,.grid-2,.cta .box{grid-template-columns:1fr}
+      .kpis{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-wrap">
+    <div class="brand">
+      <img src="safewheel-logo.jpeg" alt="SafeWheel Logo">
+    </div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#how">How It Works</a>
+      <a href="#team">Team</a>
+      <a href="#contact" class="button alt">Get the App</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-wrap">
+    <div>
+      <span class="pill">Verified drivers • Campus‑only</span>
+      <h1>Safer, cheaper, and faster rides across Malaysian IPTA campuses</h1>
+      <p>SafeWheel is an e‑hailing app built for students, lecturers, and staff. We verify every driver, prioritize safety, and price fares about 15% below typical market rates—so moving between faculties is simple and secure.</p>
+      <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+        <a href="#contact" class="button alt">Download soon</a>
+        <a href="#become-driver" class="button ghost">Become a driver</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img src="safewheel-logo.jpeg" class="hero-logo" alt="SafeWheel Emblem">
+      <div class="kpis">
+        <div class="kpi"><b>10</b><div>Universities in Year 1</div></div>
+        <div class="kpi"><b>&le;10 min</b><div>Target wait time</div></div>
+        <div class="kpi"><b>RM0.85/min</b><div>Typical fare rate</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap grid-2">
+    <div class="card">
+      <h2>Why SafeWheel</h2>
+      <p>The rise of unregistered “transporters” on campuses has created safety, reliability, and accountability issues. SafeWheel replaces informal channels with a formal, app‑based system where drivers are verified, trips are tracked, and help is one tap away.</p>
+      <h3>Vision</h3>
+      <p>To become Malaysia’s most trusted and safest student transportation platform, connecting every IPTA with reliable and secure mobility.</p>
+      <h3>Mission</h3>
+      <ul>
+        <li>Develop high‑quality mobile apps with seamless booking and payments.</li>
+        <li>Make transportation easily accessible across IPTA campuses.</li>
+        <li>Provide safe, affordable, and reliable service through verified drivers and efficient operations.</li>
+      </ul>
+      <h3>Objectives (Year 1)</h3>
+      <ul>
+        <li>100+ registered drivers and multi‑campus rollout.</li>
+        <li>&ge;90% user satisfaction; average wait under 10 minutes.</li>
+        <li>2,500+ registered student users.</li>
+      </ul>
+    </div>
+    <div class="card toc">
+      <h2>At a glance</h2>
+      <ol>
+        <li>Introduction</li>
+        <li>Purpose</li>
+        <li>Company Background</li>
+        <li>Owner’s Background</li>
+        <li>Administrative Plan</li>
+        <li>Location</li>
+        <li>Marketing Plan</li>
+        <li>Operational Plan</li>
+        <li>Financial Plan</li>
+        <li>Conclusion</li>
+      </ol>
+      <div style="margin-top:.9rem">
+        <span class="badge">IPTA‑only coverage</span>
+        <span class="badge">Driver screening</span>
+        <span class="badge">Central safety hub</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features" style="background:var(--bg-alt)">
+  <div class="wrap">
+    <h2>Key features</h2>
+    <div class="feature-list">
+      <div class="feature"><b>Verified drivers</b><br>IC, license, insurance, and background checks; orientation on Code of Conduct.</div>
+      <div class="feature"><b>Safety toolkit</b><br>Live GPS tracking, SOS button, share trip, two‑way ratings, central safety support.</div>
+      <div class="feature"><b>Smart matching</b><br>Nearest suitable driver with optional gender‑preference matching.</div>
+      <div class="feature"><b>Easy payments</b><br>E‑wallets and online banking with instant receipts.</div>
+      <div class="feature"><b>Campus pickup points</b><br>Signed locations at faculties, residences, food courts, and bus stops with QR codes.</div>
+      <div class="feature"><b>Loyalty</b><br>Every 10th ride is free for users who join the program.</div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap grid-2">
+    <div class="card">
+      <h2>Pricing</h2>
+      <p><b>Rider fare:</b> Value‑based pricing around RM0.85 per minute (about 15% below a RM1.00/min benchmark). An average 6–8 minute campus ride is roughly RM5.10–RM6.80.</p>
+      <p><b>Driver commission:</b> 10% platform commission per completed ride to encourage student participation and service availability.</p>
+      <table class="table" aria-label="Pricing summary">
+        <tr><th>Metric</th><th>Value</th></tr>
+        <tr><td>Rate (RM/min)</td><td>0.85</td></tr>
+        <tr><td>Avg ride (min)</td><td>6</td></tr>
+        <tr><td>Avg fare (RM)</td><td>5.10</td></tr>
+        <tr><td>Commission per ride (RM)</td><td>0.51</td></tr>
+      </table>
+      <p style="color:var(--muted);font-size:.92rem">Note: Fares may vary by campus, time of day, and demand.</p>
+    </div>
+    <div class="card">
+      <h2>Financial snapshot</h2>
+      <ul>
+        <li>Year‑1 rollout: 10 universities.</li>
+        <li>Assumed capacity: 30 drivers/university, 3 hrs/day, ~6 rides/hr, 22 days/month.</li>
+        <li>Estimated rides/month (10 IPTA): ~118,800.</li>
+        <li>Monthly revenue (10% commission): ~RM60,588.</li>
+        <li>Monthly operating cost: ~RM10,000.</li>
+        <li>Break‑even: ~19,608 rides/month; projected volume exceeds this.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="how" style="background:var(--bg-alt)">
+  <div class="wrap grid-2">
+    <div class="card">
+      <h2>How it works (Riders)</h2>
+      <ol>
+        <li>Open the SafeWheel app and set pickup and destination within campus.</li>
+        <li>Get matched with the nearest verified driver and track live arrival.</li>
+        <li>Ride, pay in‑app via e‑wallet/online banking, and rate your trip.</li>
+      </ol>
+      <h3>Operating hours</h3>
+      <p>Service typically runs 7:00 AM – 10:00 PM on academic days, with peak coverage during class start, lunch, and evening periods.</p>
+    </div>
+    <div class="card" id="become-driver">
+      <h2>Driver registration</h2>
+      <ol>
+        <li>Submit IC, driver’s license, insurance, and road tax.</li>
+        <li>Provide background check (external drivers) or university ID (affiliated drivers).</li>
+        <li>Attend orientation on policies and app usage.</li>
+        <li>Maintain strong ratings; low ratings may lead to suspension.</li>
+      </ol>
+      <a href="#contact" class="button" style="margin-top:.4rem">Apply to drive</a>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap grid-2">
+    <div class="card">
+      <h2>Leadership</h2>
+      <ul>
+        <li><b>CEO:</b> Mohd Danish Sufian bin Mohd Zulkifli</li>
+        <li><b>COO:</b> Muhammad Nazim Syazwan bin Md Shuhardi</li>
+        <li><b>CTO:</b> Muhammad Zarif Danish bin Mazri</li>
+        <li><b>Finance Manager:</b> Muhammad Najmi bin Mohd Adnan</li>
+        <li>Driver Management, Regional Ops, App Dev, Marketing & Promotions, Sustainability & Partnerships roles support campus rollouts and safety.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Owner’s Background</h2>
+      <ul>
+        <li>Diploma in Business Studies (Transport), UiTM</li>
+        <li>Bachelor of Business in Transport, UiTM</li>
+        <li>Experience: Grab part‑time driver; DHL Supply Chain logistics manager (5+ years); campus transport micro‑venture.</li>
+        <li>Skills: Strategy, technical development, operations, marketing, compliance.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="box">
+    <div>
+      <h2>Be first to ride with SafeWheel</h2>
+      <p>Launching across multiple IPTA campuses. Join the waitlist for rider access or driver onboarding.</p>
+      <form onsubmit="event.preventDefault(); notify();">
+        <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+          <input type="email" required placeholder="Email address" aria-label="Email"
+                 style="flex:1;min-width:220px;padding:.8rem .9rem;border:1px solid #dfe3e8;border-radius:10px">
+          <select aria-label="Role" style="padding:.8rem .9rem;border:1px solid #dfe3e8;border-radius:10px">
+            <option value="rider">I’m a rider</option>
+            <option value="driver">I want to drive</option>
+            <option value="partner">I’m a campus partner</option>
+          </select>
+          <button class="button alt" type="submit">Join waitlist</button>
+        </div>
+      </form>
+      <p style="color:var(--muted);font-size:.92rem;margin-top:.6rem">We verify submissions and email next steps as launch dates approach.</p>
+    </div>
+    <div class="card">
+      <h3>Contact</h3>
+      <p><b>Email:</b> danishsufian.business@gmail.com<br>
+         <b>Phone:</b> 017‑8397632<br>
+         <b>HQ:</b> Unit 18‑06, Arcoris Residences, Jalan Kiara 4, Mont Kiara, 50480 Kuala Lumpur</p>
+      <p style="margin:.6rem 0 0;color:var(--muted);font-size:.92rem">For media and partnerships with universities and student bodies, reach out via email.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <div>&copy; <span id="y"></span> SafeWheel. All rights reserved.</div>
+    <div style="display:flex;gap:.8rem;align-items:center">
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <span>&bull;</span>
+      <a href="#" aria-label="TikTok">TikTok</a>
+      <span>&bull;</span>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  function notify(){ alert('Thanks! You’re on the SafeWheel waitlist.'); }
+</script>
+
+</body>
+</html>
